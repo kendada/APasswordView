@@ -61,12 +61,18 @@ public class WholePasswordView extends BasePasswordView{
         setBackgroundResource(resId);
     }
 
+    /**
+     * 设置分割线颜色
+     * */
     public void setLineColor(int lineColor){
         mLineColor = getResources().getColor(lineColor);
         mLineDrawable = new ColorDrawable(mLineColor);
         setLine();
     }
 
+    /**
+     * 设置分割线
+     * */
     private void setLine(){
         int index = 1;
         while (index < mPasswordLength) {
@@ -76,6 +82,7 @@ public class WholePasswordView extends BasePasswordView{
             dividerView.setBackgroundDrawable(mLineDrawable);
             addView(dividerView, dividerParams);
 
+            // 重新添加文本控件
             TextView textView = mViewArr[index];
             removeView(textView);
             addView(textView);
@@ -84,6 +91,9 @@ public class WholePasswordView extends BasePasswordView{
         }
     }
 
+    /**
+     * 生成背景Drawable，设置圆角等
+     * */
     private GradientDrawable generateBackgroundDrawable() {
         GradientDrawable drawable = new GradientDrawable();
         drawable.setColor(mGridColor);

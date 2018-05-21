@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String TAG = MainActivity.class.getSimpleName();
 
-    private AlonePasswordView mAlonePasswordView;
+    private AlonePasswordView mAlonePasswordView, pswView3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private void initView(){
         mAlonePasswordView = (AlonePasswordView) findViewById(R.id.pswView1);
         mAlonePasswordView.setPasswordVisibility(true);
+        pswView3 = (AlonePasswordView) findViewById(R.id.pswView3);
+        pswView3.setPasswordVisibility(true);
 
 
         mAlonePasswordView.setOnPasswordChangedListener(new PasswordView.OnPasswordChangedListener() {

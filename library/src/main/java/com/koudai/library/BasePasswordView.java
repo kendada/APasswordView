@@ -27,7 +27,7 @@ import android.widget.TextView;
  * 密码输入框
  */
 
-public class BasePasswordView extends LinearLayout implements PasswordView{
+public abstract class BasePasswordView extends LinearLayout implements PasswordView{
 
     public static final int DEFAULT_PASSWORDLENGTH = 6;
     public static final int DEFAULT_TEXTSIZE = 16;
@@ -127,6 +127,7 @@ public class BasePasswordView extends LinearLayout implements PasswordView{
         setCustomAttr(mInputView);
         mInputView.setBackground(null);
         mInputView.setGravity(Gravity.CENTER);
+        mInputView.setPadding(0, 0, 0, 0);
         LayoutParams inputViewParams = new LayoutParams(0, LayoutParams.MATCH_PARENT, 1f);
         addView(mInputView, inputViewParams);
         mViewArr[0] = mInputView;
